@@ -24,14 +24,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <h3>Past</h3>
           <p>{past.name}</p>
           <p>{past.meaning}</p>
         </div>
         <div>
+          <h3>Present</h3>
           <p>{present.name}</p>
           <p>{present.meaning}</p>
         </div>
         <div>
+          <h3>Future</h3>
           <p>{future.name}</p>
           <p>{future.meaning}</p>
         </div>
