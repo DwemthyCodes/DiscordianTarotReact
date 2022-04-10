@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useDiscordianTarotDeck } from './TarotDeck';
 
 function App() {
+  const { draw } = useDiscordianTarotDeck()
+
+  const past = useMemo(() => {
+    console.log("drawing past")
+    return draw()
+  },[])
+
+  const present = useMemo(() => {
+    console.log("drawing present")
+    return draw()
+  },[])
+
+  const future = useMemo(() => {
+    console.log("drawing future")
+    return draw()
+  },[])
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <p>{past.name}</p>
+          <p>{past.meaning}</p>
+        </div>
+        <div>
+          <p>{present.name}</p>
+          <p>{present.meaning}</p>
+        </div>
+        <div>
+          <p>{future.name}</p>
+          <p>{future.meaning}</p>
+        </div>
       </header>
     </div>
   );
